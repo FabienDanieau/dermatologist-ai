@@ -87,11 +87,11 @@ if __name__ == "__main__":
 
     # get ground truth labels for test dataset
     truth = pd.read_csv('ground_truth.csv')
-    y_true = truth.as_matrix(columns=["task_1", "task_2"])
+    y_true = np.array([truth['task_1'].values,truth['task_2'].values]).T
 
     # get model predictions for test dataset
     y_pred = pd.read_csv(preds_path)
-    y_pred = y_pred.as_matrix(columns=["task_1", "task_2"])
+    y_pred = np.array([y_pred['task_1'].values,y_pred['task_2'].values]).T
 
     # plot ROC curves and print scores
     plot_roc_auc(y_true, y_pred)
