@@ -92,11 +92,15 @@ Your file should have exactly 3 columns:
 - `task_1` - the model's predicted probability that the image (at the path in `Id`) depicts melanoma
 - `task_2` - the model's predicted probability that the image (at the path in `Id`) depicts seborrheic keratosis
 
-Once the CSV file is obtained, you will use the `get_results.py` file to score your submission.  To set up the environment to run this file, you need to create (and activate) an environment with Python 3.5 and a few pip-installable packages:
+Once the CSV file is obtained, you will use the `get_results.py` file to score your submission.  To set up the environment to run this file, you need to create (and activate) an environment with Python 3.5 and a few pip-installable packages, or you may use an pre-defined environement file for conda compatible with Python 3.8:
 ```text
 conda create --name derm-ai python=3.5
 source activate derm-ai
 pip install -r requirements.txt
+
+or
+
+conda env create -f environment.yml -n derm-ai
 ```
 
 Once you have set up the environment, run the following command to see how the sample submission performed:
